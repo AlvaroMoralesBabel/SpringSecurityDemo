@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="es" xmlns:sec="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta charset="UTF-8">
-        <title>Acceso a la aplicación</title>
-    </head>
-    <body>
-        <h1 th:inline="text">Hola administrador <span th:remove="tag" sec:authentication="name">thymeleaf</span>!!</h1>
-        <form th:action="@{/logout}" method="post">
-            <input type="submit" value="Cerrar sesión" />
-        </form>
-    </body>
+<head>
+    <meta charset="UTF-8">
+    <title>Acceso a la aplicación</title>
+</head>
+<body>
+<h1 th:inline="text">Hola administrador <span th:remove="tag" sec:authentication="name">thymeleaf</span>!!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Cerrar sesión"/>
+</form>
+
+<form th:action="@{/api/list}" method="get">
+    <button type="submit">Ver lista de usuarios</button>
+</form>
+</body>
 </html>

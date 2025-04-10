@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de usuarios</title>
+</head>
+<body>
+<h1>Lista de usuarios</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Authorities</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+        <td th:text="${user.username}">Username</td>
+        <td th:text="${#strings.join(user.authorities, ', ')}">Authorities</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
